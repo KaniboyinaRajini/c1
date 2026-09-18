@@ -4,20 +4,17 @@ class Counter extends Component {
   constructor(props) {
     super(props);
 
-    // Initialize state
     this.state = {
       count: 0
     };
 
-    // Bind event handler
     this.incrementCount = this.incrementCount.bind(this);
   }
 
-  // Event handler to increase count
   incrementCount() {
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
+    this.setState({
+      count: this.state.count + 1
+    });
   }
 
   render() {
@@ -25,9 +22,7 @@ class Counter extends Component {
       <div style={{ textAlign: 'center', marginTop: '50px' }}>
         <h1>Counter App</h1>
 
-        <p>
-          Current Count: <strong>{this.state.count}</strong>
-        </p>
+        <p>Current Count: {this.state.count}</p>
 
         <button onClick={this.incrementCount}>
           Increment
